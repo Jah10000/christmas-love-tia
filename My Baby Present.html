@@ -1,0 +1,248 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>I Love You Baby</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            animation: backgroundChange 1s infinite alternate; /* Blinking background color */
+        }
+
+        /* Background with Christmas Light Effect */
+        @keyframes backgroundChange {
+            0% { background-color: #ff4f58; } /* Red */
+            100% { background-color: #228b22; } /* Green */
+        }
+
+        /* Christmas Lights Animation */
+        .lights {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            background-image: url('https://i.imgur.com/2mYm3iJ.png');
+            background-size: 100px 100px;
+            background-repeat: no-repeat;
+            animation: twinklingLights 1.5s infinite ease-in-out alternate;
+        }
+
+        @keyframes twinklingLights {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+
+        /* Snow Falling Animation */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            z-index: 1;
+            font-size: 1.5rem;
+            color: #fff;
+            animation: snowflakes 10s linear infinite;
+        }
+
+        @keyframes snowflakes {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        .snowflake:nth-child(odd) {
+            animation-duration: 12s;
+        }
+
+        .snowflake:nth-child(even) {
+            animation-duration: 15s;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #c92c2c; /* Christmas red */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            border-bottom: 5px solid #228b22; /* Green for Christmas */
+            background-image: url('https://www.transparenttextures.com/patterns/pw-maze-white.png');
+            background-size: 20px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Dancing Script', cursive; /* Christmas font for header */
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin: 5px 0 0;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Notepad Styles */
+        .notepad {
+            width: 100%;
+            height: 400px;
+            background-color: #fff;
+            border: 5px solid transparent;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-family: 'Patrick Hand', cursive; /* Handwritten font for note section */
+            outline: none;
+            resize: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-image: url('https://www.transparenttextures.com/patterns/white-linen.png');
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Christmas Lights Border */
+        .notepad::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 10px;
+            border: 5px solid transparent;
+            background-image: url('https://i.imgur.com/2mYm3iJ.png');
+            background-size: 40px 40px;
+            background-repeat: repeat;
+            animation: twinklingLights 1s infinite ease-in-out alternate;
+            z-index: -1;
+        }
+
+        .notepad:focus {
+            border-color: #228b22; /* Green for focus */
+        }
+
+        /* Button Styles */
+        .button {
+            background-color: #228b22; /* Green button */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+
+        .button:focus {
+            outline: none;
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #555;
+            font-style: italic;
+            padding: 10px;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Christmas Tree Icon Styles */
+        .tree-icon {
+            font-size: 3rem;
+            color: #228b22;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .notepad {
+                height: 300px;
+            }
+
+            .button {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Christmas Lights and Falling Snow -->
+    <div class="snowflake" style="left: 10%; animation-delay: 0s;">❄</div>
+    <div class="snowflake" style="left: 25%; animation-delay: 2s;">❄</div>
+    <div class="snowflake" style="left: 50%; animation-delay: 4s;">❄</div>
+    <div class="snowflake" style="left: 75%; animation-delay: 1s;">❄</div>
+    <div class="snowflake" style="left: 90%; animation-delay: 3s;">❄</div>
+
+    <!-- Audio Player for Background Music -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="jingle_bell_rock.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="header">
+        <h1>I Love You Tia</h1>
+        <p>A special Christmas note just for you</p>
+    </div>
+
+    <div class="container">
+        <!-- Christmas Tree Icon -->
+        <div class="tree-icon">🎄</div>
+
+        <textarea class="notepad" id="notepad" placeholder="Write your sweet notes here..."></textarea>
+
+        <button class="button" onclick="saveNote()">Save Note</button>
+        <p id="saveStatus" style="color: green;"></p>
+    </div>
+
+    <div class="footer">
+        <p>Made with love for you this Christmas ❤️</p>
+    </div>
+
+    <script>
+        function saveNote() {
+            const noteContent = document.getElementById('notepad').value;
+            if (noteContent) {
+                const blob = new Blob([noteContent], { type: 'text/plain' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'note.txt';
+                l
+
